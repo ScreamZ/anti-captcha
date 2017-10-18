@@ -1,0 +1,57 @@
+# AntiCaptcha 
+
+This library is a NodeJS wrapper that expose an modern API in order to exploit the https://anti-captcha.com/ service.
+
+## Documentation
+
+Please keep in mind that this is a work in progress and it only support Proxyless Recaptcha breaker.
+
+For the demonstration we will use [ES7 Async Function](https://developers.google.com/web/fundamentals/primers/async-functions) this will make the syntax more concise, but feel free to use good old Promises.
+
+Keep in mind that real people are working behind the network to break the hash. This can take some time depending on the load, therefore do not forget to set a greater timeout for calls if you're using this through an REST API.
+
+```javascript
+// main.js
+import { AntiCaptcha } from "anticaptcha";
+
+// Registering the API.
+const AntiCaptchaAPI = new AntiCapcha("<your_client_ID>"); // You can pass true as second argument to enable debug logs.
+
+const mainProcess = async () => {
+    // Checking the account balance before creating a task.
+    if (await !AntiCaptchaAPI.isBalanceGreaterThan(10)) {
+        // You can dispatch a warning using mailer or whatever.
+        console.warn("Take care, you're running low on money !")
+    }
+
+    // Creating a task to resolve.
+    const taskId = AntiCaptchaAPI.createTask(
+        "http://www.some-site.com", // The page where the captcha is
+        "7Lfh6tkSBBBBBBGN68s8fAVds_Fl-HP0xQGNq1DK", // The data-site-key value
+    )
+
+    // Waiting for resolution
+    const response = await AntiCaptchaAPI.getTaskResult(taskId);
+}
+
+```
+
+The response object looks like this, feel free to check Typescript definition file that are given. This will give you nice idea of type of object.
+
+```typescript
+ {
+    status: "ready" | "processing";
+    solution: { gRecaptchaResponse: string };
+    cost: number;
+    ip: string;
+    createTime: number;
+    endTime: number;
+    /**
+     * Number of workers who tried to complete your task
+     *
+     * @type {number}
+     * @memberof IGetTaskResponse
+     */
+    solveCount: number;
+ }
+```
