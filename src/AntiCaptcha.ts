@@ -78,6 +78,7 @@ export class AntiCaptcha {
         }) as ApiResponse<ICreateTaskResponse>;
 
         if (response.ok && response.data.errorId === 0) {
+            if (this.debug) { console.log(`Task [ ${response.data.taskId} ] - Created`); }
             return response.data.taskId;
         }
 
@@ -100,9 +101,9 @@ export class AntiCaptcha {
         let retryCount = 0;
         return new Promise((resolve, reject) => {
             const routine = setInterval(async () => {
-                if (this.debug) { console.log(`Task [${taskId}] - Retry : ${retryCount}.`); }
+                if (this.debug) { console.log(`Task [ ${taskId} ] - Retry : ${retryCount}`); }
                 if (retryCount > retry) {
-                    if (this.debug) { console.log(`Task [${taskId}] - Exceeded ${retry} retry count.`); }
+                    if (this.debug) { console.log(`Task [${taskId}] - Exceeded retry count [ ${retry} ].`); }
                     clearInterval(routine);
                     reject(new Error("L'appel est timeout."));
                     return;
@@ -122,7 +123,7 @@ export class AntiCaptcha {
 
                 // If request is OK, we resolve
                 if (response.data.status === "ready") {
-                    if (this.debug) { console.log(`Task [${taskId}] - Hash found !`); }
+                    if (this.debug) { console.log(`Task [ ${taskId} ] - Hash found !`); }
                     clearInterval(routine);
                     resolve(response.data);
                     return;

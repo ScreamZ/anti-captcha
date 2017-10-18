@@ -1,6 +1,6 @@
 {
   "name": "anticaptcha",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A modern wrapper around AntiCaptcha API.",
   "author": "Andréas \"ScreamZ\" Hanss",
   "license": "MIT",
@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "prepublishOnly": "build"
+    "prepublishOnly": "tsc"
   },
   "engines": {
     "node": ">=6.11.4"
