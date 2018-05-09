@@ -2,10 +2,6 @@
 # yarn lockfile v1
 
 
-"@types/bluebird@^3.5.16":
-  version "3.5.16"
-  resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.16.tgz#d65dbbf3bc62a0b3dd145f48dc6511b1ed8cc6bb"
-
 "@types/node@^8.0.44":
   version "8.0.44"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.0.44.tgz#5c39800fda4b76dab39a5f28fda676fc500015ac"
@@ -18,9 +14,9 @@ ansi-styles@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/ansi-styles/-/ansi-styles-2.2.1.tgz#b432dd3358b634cf75e1e4664368240533c1ddbe"
 
-apisauce@^0.14.1:
-  version "0.14.1"
-  resolved "https://registry.yarnpkg.com/apisauce/-/apisauce-0.14.1.tgz#f5ccec9a1e802408feeb9e3230d1f440f20520c2"
+apisauce@^0.14.3:
+  version "0.14.3"
+  resolved "https://registry.yarnpkg.com/apisauce/-/apisauce-0.14.3.tgz#0a2dd11d883934c33e31f9ddfc612805490a7ba8"
   dependencies:
     axios "^0.16.2"
     ramda "^0.24.1"
@@ -43,10 +39,6 @@ babel-code-frame@^6.22.0:
 balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
-
-bluebird@^3.5.1:
-  version "3.5.1"
-  resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.5.1.tgz#d9551f9de98f1fcda1e683d17ee91a0602ee2eb9"
 
 brace-expansion@^1.1.7:
   version "1.1.8"

@@ -1,11 +1,11 @@
 {
   "name": "anticaptcha",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A modern wrapper around AntiCaptcha API.",
   "author": "Andréas \"ScreamZ\" Hanss",
   "license": "MIT",
-  "main": "./build/AntiCaptcha.js",
-  "types": "./build",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
@@ -15,7 +15,7 @@
     "node": ">=6.11.4"
   },
   "dependencies": {
-    "apisauce": "^0.14.1",
+    "apisauce": "^0.14.3",
     "tslint": "^5.7.0",
     "typescript": "^2.5.3"
   },

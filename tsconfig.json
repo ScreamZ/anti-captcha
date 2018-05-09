@@ -5,6 +5,6 @@
     "outDir": "./build",
     "declaration": true
   },
-  "include": ["src/AntiCaptcha.ts"],
+  "include": ["src"],
   "exclude": ["node_modules/**"]
 }
