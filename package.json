@@ -15,12 +15,12 @@
     "node": ">=6.11.4"
   },
   "dependencies": {
-    "apisauce": "^0.14.3",
-    "tslint": "^5.7.0",
-    "typescript": "^2.5.3"
+    "apisauce": "^0.14.3"
   },
   "devDependencies": {
-    "@types/node": "^8.0.44"
+    "@types/node": "^8.0.44",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.3"
   },
   "repository": {
     "type": "git",
