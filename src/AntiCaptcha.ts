@@ -117,7 +117,7 @@ export class AntiCaptcha {
                 // If Error we reject
                 if (!response.ok || response.data.errorId !== 0) {
                     clearInterval(routine);
-                    reject(new Error(response.data.errorDescription));
+                    reject(new Error(response.data.hasOwnProperty('errorDescription') ? response.data.errorDescription : 'http request to get task result failed'));
                     return;
                 }
 
