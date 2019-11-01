@@ -28,7 +28,7 @@ For the example, we will use the nice feature that are [ES7 Async Function](http
 import { AntiCaptcha } from "anticaptcha";
 
 // Registering the API Client.
-const AntiCaptchaAPI = new AntiCapcha("<your_client_ID>"); // You can pass true as second argument to enable debug logs.
+const AntiCaptchaAPI = new AntiCaptcha("<your_client_ID>"); // You can pass true as second argument to enable debug logs.
 
 const mainProcess = async () => {
     // Checking the account balance before creating a task. This is a conveniance method.
