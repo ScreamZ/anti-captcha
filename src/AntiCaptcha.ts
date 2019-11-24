@@ -89,6 +89,36 @@ export class AntiCaptcha {
         return response.data.taskId;
     }
 
+     /**
+     *
+     * @param {string} websiteURL - The URL where the captcha is defined.
+     * @param {string} websiteKey - The value of the "data-site-key" attribute.
+     * @param {string} languagePool - The language pool. Default to English if not provided.
+     * @param {number} minScore - minimum score you want to get
+     * @param {string} pageAction - the action name is defined by the website owner
+     * @returns {Promise<number>}
+     * @memberof AntiCaptcha
+     */
+    public async createTaskRecaptchaV3Proxyless(websiteURL: string, websiteKey: string, minScore: number, pageAction: string, languagePool: string = "en") {
+        const response = await this.api.post("createTask", {
+            languagePool,
+            task: {
+                type: TaskTypes.RECAPTCHA_V3_PROXYLESS,
+                websiteKey,
+                websiteURL,
+                minScore,
+                pageAction
+            },
+        }) as ApiResponse<ICreateTaskResponse>;
+
+        if (response.ok && response.data.errorId === 0) {
+            if (this.debug) { console.log(`Task [ ${response.data.taskId} ] - Created`); }
+            return response.data.taskId;
+        }
+
+        throw new Error(response.data.errorDescription);
+    }
+
     /**
      * Check a task to be resolved. Will try for given amount at the give time interval.
      *
