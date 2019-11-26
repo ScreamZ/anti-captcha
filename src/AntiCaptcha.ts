@@ -92,12 +92,12 @@ export class AntiCaptcha {
     })) as ApiResponse<ICreateTaskResponse>;
 
     if (response.ok && response.data.errorId === 0) {
-      throw new AntiCaptchaError(
-        response.data.errorCode,
-        response.data.errorDescription
-      );
+      return response.data.taskId;
     }
-    return response.data.taskId;
+    throw new AntiCaptchaError(
+      response.data.errorCode,
+      response.data.errorDescription
+    );
   }
 
   /**
