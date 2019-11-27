@@ -1,6 +1,6 @@
 {
   "name": "anticaptcha",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "A modern wrapper around AntiCaptcha API.",
   "author": "Andréas \"ScreamZ\" Hanss",
   "license": "MIT",
