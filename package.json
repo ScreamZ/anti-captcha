@@ -1,5 +1,5 @@
 {
-  "name": "@hugoleblanc/anticaptcha",
+  "name": "anticaptcha",
   "version": "2.0.6",
   "description": "A modern wrapper around AntiCaptcha API.",
   "author": "Andréas \"ScreamZ\" Hanss",
@@ -24,9 +24,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/HugoLeblanc/anti-captcha.git"
+    "url": "https://github.com/ScreamZ/anti-captcha.git"
   },
   "bugs": {
-    "url": "https://github.com/HugoLeblanc/anti-captcha.git"
+    "url": "https://github.com/ScreamZ/anti-captcha/issues"
   }
 }
