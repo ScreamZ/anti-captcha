@@ -2,6 +2,7 @@ export enum TaskTypes {
   NOCAPTCHA_PROXYLESS = "NoCaptchaTaskProxyless",
   NOCAPTCHA = "NoCaptchaTask",
   RECAPTCHA_PROXYLESS = "RecaptchaV3TaskProxyless",
+  RECAPTCHAV2_PROXYLESS = "RecaptchaV2TaskProxyless",
   IMAGE_TO_TEXT = "ImageToTextTask",
   FUN_CAPTCHA = "FunCaptchaTask",
 }

@@ -1,6 +1,6 @@
 {
   "name": "anticaptcha",
-  "version": "2.0.3",
+  "version": "2.0.6",
   "description": "A modern wrapper around AntiCaptcha API.",
   "author": "Andréas \"ScreamZ\" Hanss",
   "license": "MIT",
@@ -15,7 +15,7 @@
     "node": ">=6.11.4"
   },
   "dependencies": {
-    "apisauce": "^1.1.1"
+    "apisauce": "^1.1.2"
   },
   "devDependencies": {
     "@types/node": "^8.0.44",

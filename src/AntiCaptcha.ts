@@ -105,6 +105,40 @@ export class AntiCaptcha {
    * @param {string} websiteURL - The URL where the captcha is defined.
    * @param {string} websiteKey - The value of the "data-site-key" attribute.
    * @param {string} languagePool - The language pool. Default to English if not provided.
+   * @returns {Promise<number>}
+   * @memberof AntiCaptcha
+   */
+   public async createTaskRecaptchaV2Proxyless(    
+    websiteURL: string,
+    websiteKey: string,
+    languagePool: string = "en"
+  ) {
+    const response = (await this.api.post("createTask", {
+      languagePool,
+      task: {
+        type: TaskTypes.RECAPTCHAV2_PROXYLESS,
+        websiteKey,
+        websiteURL,
+        websiteSToken: null,
+        recaptchaDataSValue: null
+      }
+    })) as ApiResponse<ICreateTaskResponse>;
+
+    if (response.ok && response.data.errorId === 0) {
+      if (this.debug) {
+        console.log(`Task [ ${response.data.taskId} ] - Created`);
+      }
+      return response.data.taskId;
+    }
+
+    throw new Error(response.data.errorDescription);
+  }
+
+  /**
+   *
+   * @param {string} websiteURL - The URL where the captcha is defined.
+   * @param {string} websiteKey - The value of the "data-site-key" attribute.
+   * @param {string} languagePool - The language pool. Default to English if not provided.
    * @param {number} minScore - minimum score you want to get
    * @param {string} pageAction - the action name is defined by the website owner
    * @returns {Promise<number>}

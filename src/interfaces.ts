@@ -1,4 +1,11 @@
-import { ErrorCodes, ImageNumericRequirements, LanguagePoolTypes, RecaptchaWorkerScore, TaskStatus, TaskTypes} from "./enum";
+import {
+  ErrorCodes,
+  ImageNumericRequirements,
+  LanguagePoolTypes,
+  RecaptchaWorkerScore,
+  TaskStatus,
+  TaskTypes,
+} from "./enum";
 
 export interface IApiError {
   errorId: number;
@@ -88,6 +95,28 @@ export interface INoCaptchaTaskProxyless {
 }
 
 export interface INoCaptchaTaskProxylessResult {
+  /**
+   * Hash string which is required for interacting with submit form on target website.
+   */
+  gRecaptchaResponse: string;
+}
+
+export interface IRecaptchaV2TaskProxyless {
+  /**
+   * Must be set to RecaptchaV3TaskProxyless
+   */
+  type: TaskTypes.RECAPTCHAV2_PROXYLESS;
+  /**
+   * Address of target web page
+   */
+  websiteURL: string;
+  /**
+   * Recaptcha website key
+   * @example <div class="g-recaptcha" data-sitekey="THAT_ONE"></div>
+   */
+  websiteKey: string;
+}
+export interface IRecaptchaV2TaskProxylessResult {
   /**
    * Hash string which is required for interacting with submit form on target website.
    */
