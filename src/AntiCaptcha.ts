@@ -141,6 +141,7 @@ export class AntiCaptcha {
    * @param {string} languagePool - The language pool. Default to English if not provided.
    * @param {number} minScore - minimum score you want to get
    * @param {string} pageAction - the action name is defined by the website owner
+   * @param {boolean} isEnterprise - Set this flag to "true" if you need this V3 solved with Enterprise API. Default value is "false" and Recaptcha is solved with non-enterprise API.
    * @returns {Promise<number>}
    * @memberof AntiCaptcha
    */
@@ -149,11 +150,13 @@ export class AntiCaptcha {
     websiteKey: string,
     minScore: number,
     pageAction: string,
-    languagePool: string = "en"
+    languagePool: string = "en",
+    isEnterprise: boolean = false
   ) {
     const response = (await this.api.post("createTask", {
       languagePool,
       task: {
+        isEnterprise,
         minScore,
         pageAction,
         type: TaskTypes.RECAPTCHA_PROXYLESS,
