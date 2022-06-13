@@ -101,6 +101,45 @@ export interface INoCaptchaTaskProxylessResult {
   gRecaptchaResponse: string;
 }
 
+export interface IHCaptchaTaskProxyless {
+  /**
+   * Must be set to HCaptchaTaskProxyless
+   */
+  type: TaskTypes.HCAPTCHA_PROXYLESS;
+  /**
+   * Address of target web page
+   */
+  websiteURL: string;
+  /**
+   * Recaptcha website key
+   */
+  websiteKey: string;
+  /**
+   * Specify that HCaptcha is invisible. This will render an appropriate widget
+   * for our workers.
+   */
+  isInvisible?: boolean;
+  /**
+   * Additional parameters which we'll use to render Hcaptcha widget for Enterprise version.
+   */
+  enterprisePayload?: {
+    rqdata?: string;
+    sentry?: boolean;
+    apiEndpoint?: string;
+    endpoint?: string;
+    reportapi?: string;
+    assethost?: string;
+    imghost?: string;
+  }
+}
+
+export interface IHCaptchaTaskProxylessResult {
+  /**
+   * Token string required for interacting with the submit form on the target website.
+   */
+  gRecaptchaResponse: string;
+}
+
 export interface IRecaptchaV2TaskProxyless {
   /**
    * Must be set to RecaptchaV3TaskProxyless

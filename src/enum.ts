@@ -5,6 +5,8 @@ export enum TaskTypes {
   RECAPTCHAV2_PROXYLESS = "RecaptchaV2TaskProxyless",
   IMAGE_TO_TEXT = "ImageToTextTask",
   FUN_CAPTCHA = "FunCaptchaTask",
+  HCAPTCHA_PROXYLESS = "HCaptchaTaskProxyless",
+  HCAPTCHA = "HCaptchaTask"
 }
 
 export enum QueueTypes {
