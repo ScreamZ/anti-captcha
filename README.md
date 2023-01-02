@@ -28,7 +28,7 @@ For the example, we will use the nice feature that are [ES7 Async Function](http
 import {
   AntiCaptcha,
   AntiCaptchaError,
-  ErrorTypes,
+  ErrorCodes,
   INoCaptchaTaskProxyless,
   INoCaptchaTaskProxylessResult,
   QueueTypes,
